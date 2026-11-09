@@ -41,16 +41,6 @@ Qwen changed 5 of the 35 parameters. `ablazione.py` applies each change alone to
 
 Almost all of the gain comes from the bias of the "up" action, which pushes the agent upwards from every position. With v1 the agent climbs to row 0 from rows 1 to 5 and passes above the wall. From row 6, where moving down would have been enough, it still crashes. The change the model reasoned about most (`0.weight[1][3]`) has no effect on the score.
 
-## What the reasoning shows
-
-The full reasoning is in `versioni/log_v1.txt` (a first, truncated attempt is in `versioni/log_v1_troncato.txt`).
-
-1. The model correctly maps weight rows to actions and correctly identifies that "straight" wins the argmax in the crash cases.
-2. It makes arithmetic slips. For example, it computes the first hidden unit at row 3 as `-0.0012`, while the correct value before the bias is about `-0.112`.
-3. It analyses the agent at column 5, where it is already inside the wall, instead of the earlier columns where the decision is actually made.
-4. It evaluates its own first change, notes "Still negative, but better", and does not notice that "up" would still lose to "straight".
-5. It cycles through the same hypotheses several times, writes "Given the time constraints" although the prompt sets no time limit, and calls its final proposal "a rough estimate". The reasoning hit the 8,000-token limit while writing the JSON.
-
 ## Limitations
 
 One network, one environment, one attempt, one model. There is no baseline of random edits to the same number of parameters, so it is not possible to say whether the gain exceeds what chance would give. The comparison with a frontier model (Claude Opus 5.5) on the same prompt is planned but not done.
