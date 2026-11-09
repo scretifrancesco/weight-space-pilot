@@ -49,12 +49,16 @@ One network, one environment, one attempt, one model. There is no baseline of ra
 
 ## Run it
 
-Requires Python 3, PyTorch and Ollama with `qwen3:14b` pulled. The code is commented and named in Italian.
+Tested with Python 3.14, PyTorch 2.11 and Ollama 0.35 on a MacBook Air M4 (16 GB). Variable names and printed messages are in Italian.
 
 ```
-python3 esperimento.py 0                 # one edit round: v0 -> v1 (about 20 minutes on an M4 Air)
-python3 ablazione.py                     # per-parameter ablation of v0 vs v1
+pip install torch
+ollama pull qwen3:14b
+python3 ablazione.py        # reproduces the scores and the ablation table from the saved weights
+python3 esperimento.py 0    # reruns the edit round v0 -> v1 (about 20 minutes, overwrites versioni/v1.json and the log)
 ```
+
+`versioni/v0.json` is the network produced by `torch.manual_seed(0)`. Even with temperature 0 and a fixed seed, a different Ollama version or different hardware may produce a different answer from the model.
 
 ## Reference
 
