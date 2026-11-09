@@ -6,7 +6,7 @@ A pilot experiment inspired by *Weight-Space Programming* (Takehi, Teoh, Zhang a
 
 ## Question
 
-Can a mid-sized open model, running locally on a laptop, improve the behaviour of a tiny neural network by editing its weights directly, with no gradient descent, no backpropagation and no reinforcement learning? And how does it reason about the weights while doing so?
+Can a mid-sized open model, running locally on a laptop, improve the behaviour of a tiny neural network by editing its weights directly, with no gradient descent, no backpropagation and no reinforcement learning?
 
 This is an experiment with a single attempt. It does not show whether the method works. It is a first qualitative look at how a 14B model handles the task.
 
