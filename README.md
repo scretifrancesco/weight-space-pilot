@@ -2,6 +2,8 @@
 
 A pilot experiment inspired by *Weight-Space Programming* (Takehi, Teoh, Zhang and Khattab, MIT CSAIL, 2026), in which a frontier language model reads the weights of a neural network as text and rewrites them directly, without an optimizer.
 
+![v0 crashes into the wall, v1 gets past it](demo.gif)
+
 ## Question
 
 Can a mid-sized open model, running locally on a laptop, improve the behaviour of a tiny neural network by editing its weights directly, with no gradient descent, no backpropagation and no reinforcement learning? And how does it reason about the weights while doing so?
@@ -53,6 +55,7 @@ Requires Python 3, PyTorch and Ollama with `qwen3:14b` pulled. The code is comme
 python3 esperimento.py 0                 # one edit round: v0 -> v1 (about 20 minutes on an M4 Air)
 python3 ablazione.py                     # per-parameter ablation of v0 vs v1
 python3 vedi.py versioni/v1.json 4       # draw the run of v1 from start row 4
+python3 demo.py                          # build demo.gif (v0 vs v1 from start row 4)
 ```
 
 ## Reference
