@@ -1,6 +1,6 @@
 # weight-space-pilot
 
-A one-afternoon pilot inspired by *Weight-Space Programming* (Takehi, Teoh, Zhang and Khattab, MIT CSAIL, 2026), in which a frontier language model reads the weights of a neural network as text and rewrites them directly, without an optimizer.
+A pilot inspired by *Weight-Space Programming* (Takehi, Teoh, Zhang and Khattab, MIT CSAIL, 2026), in which a frontier language model reads the weights of a neural network as text and rewrites them directly, without an optimizer.
 
 ## Question
 
